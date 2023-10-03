@@ -2,10 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-app = Flask(__name__)
 db = SQLAlchemy()
 migrate = Migrate()
-
 
 
 def create_app():
@@ -17,3 +15,6 @@ def create_app():
     migrate.init_app(app, db)
 
     return app
+
+
+app = create_app()
